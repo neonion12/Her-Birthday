@@ -1,0 +1,300 @@
+/* 🌸 Soft, romantic color palette */
+:root {
+    --text: #d63384;   /* আগের চেয়ে একটু গাঢ় পিংক, সাদা ব্যাকগ্রাউন্ডে পরিষ্কার দেখা যাবে */
+    --rose: #f783b7;
+    --card: #4a253d;
+    --border: #f3d5e3;
+    --shadow: 0 12px 32px rgba(160, 82, 122, 0.12);
+}
+
+/* Page background */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--text);
+
+    background:
+        radial-gradient(
+            ellipse at top left,
+            #ffe2ee 0%,
+            transparent 55%
+        ),
+        linear-gradient(
+            180deg,
+            #fff7fb 0%,
+            #fff9f2 50%,
+            #f5eeff 100%
+        );
+}
+
+.font-anime {
+    font-family: 'Mochiy Pop One', sans-serif;
+}
+
+.text-sakura {
+    color: var(--rose);
+}
+
+::selection {
+    background: #f8c2d8;
+    color: #65364f;
+}
+
+/* 🎬 Hero: keep the video, add a romantic tint */
+header {
+    isolation: isolate;
+    background-color: #FC809F;
+}
+
+header > .bg-black {
+    background: linear-gradient(
+        180deg,
+        rgba(255, 188, 205, 0.45),
+        rgba(255, 188, 205, 0.30),
+        rgba(255, 188, 205, 0.50)
+    );
+}
+
+header h1 {
+    color: #fff;
+    text-shadow: 0 2px 18px rgba(180, 80, 120, 0.35);
+}
+
+header p {
+    color: #fff;
+    text-shadow: 0 2px 12px rgba(180, 80, 120, 0.3);
+}
+
+/* ⏳ Soft glass counter */
+#countdown {
+    color: #fff;
+    text-shadow: 0 2px 14px rgba(180, 80, 120, 0.35);
+}
+
+/* 💌 Section headings */
+main h2 {
+    color: var(--rose);
+    text-shadow: 0 2px 0 rgba(255, 255, 255, 0.9);
+}
+
+main h3 {
+    color: var(--rose);
+}
+
+/* 🤍 Letter and photo cards */
+/* 💌 Letter and photo cards — darkish berry background so pink text pops */
+main .bg-white {
+    background: linear-gradient(145deg, #4a253d, #381b30);
+    color: #ffc2e2;
+    border: 1px solid #f783b7;
+    border-radius: 24px;
+    box-shadow: 0 14px 34px rgba(74, 37, 61, 0.28);
+}
+
+/* 📸 Soft photo frames */
+main img.rounded-lg,
+main img.rounded-md {
+    border-color: #ffe2ed;
+    border-radius: 20px;
+    box-shadow: 0 8px 24px rgba(145, 79, 116, 0.13);
+}
+
+/* Hall of Fame cards */
+#hall-of-fame-scroller .bg-white {
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+#hall-of-fame-scroller .bg-white:hover {
+    border-color: #e8abc7;
+    box-shadow: 0 16px 36px rgba(160, 82, 122, 0.2);
+}
+
+/* 🌷 Gallery navigation */
+#scroll-left-btn,
+#scroll-right-btn {
+    background: #fff6fb;
+    border: 1px solid var(--border);
+    box-shadow: 0 4px 16px rgba(160, 82, 122, 0.15);
+}
+
+#scroll-left-btn:hover,
+#scroll-right-btn:hover {
+    background: #ffe4ef;
+}
+
+/* 🎵 Transparent, rose-tinted music button */
+#musicBtn {
+    color: #fff5fa;
+    background: rgba(255, 218, 235, 0.18);
+    border: 1px solid rgba(255, 235, 245, 0.65);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow:
+        0 8px 24px rgba(70, 25, 55, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.25);
+}
+
+#musicBtn:hover {
+    background: rgba(255, 218, 235, 0.32);
+    box-shadow: 0 10px 30px rgba(255, 160, 200, 0.25);
+}
+
+#musicBtn:focus-visible {
+    outline: 3px solid #fff0f7;
+    outline-offset: 5px;
+}
+
+#scroll-left-btn:focus-visible,
+#scroll-right-btn:focus-visible,
+#lightgallery a:focus-visible {
+    outline: 3px solid var(--rose);
+    outline-offset: 4px;
+}
+
+/* 💜 Romantic footer */
+.bg-navy {
+    background: linear-gradient(
+        135deg,
+        #a34b76,
+        #89639d
+    );
+}
+
+footer.bg-navy {
+    color: #fff5fa;
+    border-top: 1px solid #edc9dd;
+}
+
+/* Full-screen photo viewer */
+.lg-backdrop {
+    background-color: #382338;
+}
+
+/* 🌸 Falling petals — preserved */
+#sakura-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Hide horizontal scrollbar, keep scrolling */
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* 📸 Scrolling photo columns beside letter */
+.photo-col {
+    width: 180px;
+    height: 580px;
+    overflow: hidden;
+    border-radius: 22px;
+    flex-shrink: 0;
+    -webkit-mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+    mask-image: linear-gradient(to bottom, transparent, black 12%, black 88%, transparent);
+}
+
+.photo-track {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.photo-item {
+    width: 100%;
+    height: 175px;
+    object-fit: cover;
+    border-radius: 18px;
+    border: 3px solid rgba(255,255,255,0.8);
+    box-shadow: 0 8px 22px rgba(160, 82, 122, 0.18);
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: scale(1.06);
+}
+
+.photo-up .photo-track {
+    animation: scrollUp 20s linear infinite;
+}
+
+.photo-down .photo-track {
+    animation: scrollDown 20s linear infinite;
+}
+
+.photo-col:hover .photo-track {
+    animation-play-state: paused;
+}
+
+@keyframes scrollUp {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(-50%); }
+}
+
+@keyframes scrollDown {
+    0%   { transform: translateY(-50%); }
+    100% { transform: translateY(0); }
+}
+
+/* 🌸 Hero collage — bigger, closer, no crop */
+.collage-img {
+  position: absolute;
+  height: auto;
+  max-height: 46vh;
+  border: 5px solid rgba(255, 255, 255, 0.92);
+  border-radius: 18px;
+  background: #fff;
+  padding: 6px;
+  box-shadow: 0 16px 36px rgba(150, 50, 90, 0.28);
+  object-fit: contain;
+  animation: floatCollage 7s ease-in-out infinite alternate;
+}
+
+@keyframes floatCollage {
+  0% { transform: translateY(0) rotate(var(--rot)); }
+  100% { transform: translateY(-18px) rotate(calc(var(--rot) + 4deg)); }
+}
+
+@media (min-width: 768px) {
+  .img-1  { top: 2%;  left: 1%;  width: 340px; --rot: -6deg; animation-delay: 0s; }
+  .img-2  { top: 6%;  left: 16%; width: 260px; --rot: 5deg;  animation-delay: 1s; }
+  .img-3  { bottom: 2%; left: 1%; width: 360px; --rot: 4deg; animation-delay: 2s; }
+  .img-4  { top: 1%;  left: 30%; width: 230px; --rot: -9deg; animation-delay: 3s; }
+  .img-5  { bottom: 3%; left: 18%; width: 280px; --rot: 7deg; animation-delay: 1.4s; }
+  .img-6  { top: 36%; left: 0%; width: 250px; --rot: 11deg; animation-delay: 2.4s; }
+
+  .img-7  { top: 2%;  right: 1%; width: 340px; --rot: 6deg; animation-delay: 0.5s; }
+  .img-8  { top: 6%;  right: 16%; width: 260px; --rot: -5deg; animation-delay: 1.6s; }
+  .img-9  { bottom: 2%; right: 1%; width: 360px; --rot: -4deg; animation-delay: 2.1s; }
+  .img-10 { top: 1%;  right: 30%; width: 230px; --rot: 9deg; animation-delay: 3.2s; }
+  .img-11 { bottom: 3%; right: 18%; width: 280px; --rot: -7deg; animation-delay: 1.2s; }
+  .img-12 { top: 36%; right: 0%; width: 250px; --rot: -11deg; animation-delay: 2.7s; }
+}
+
+@media (max-width: 767px) {
+  .collage-img { padding: 3px; border-width: 3px; max-height: 28vh; }
+  .img-1  { top: 2%;  left: 0%;  width: 130px; --rot: -8deg; }
+  .img-2  { top: 8%;  right: 0%; width: 120px; --rot: 8deg; }
+  .img-3  { bottom: 2%; left: 0%; width: 140px; --rot: 5deg; }
+  .img-4  { bottom: 8%; right: 0%; width: 125px; --rot: -6deg; }
+  .img-5, .img-6, .img-7, .img-8, .img-9, .img-10, .img-11, .img-12 { display: none; }
+}
+
+/* শুধু Hall of Fame-এর photo cards আগের মতো light */
+#hall-of-fame-scroller .bg-white {
+    background: #fffcfe;
+    color: #87405f;
+    border: 1px solid #f3d5e3;
+    box-shadow: 0 12px 32px rgba(160, 82, 122, 0.12);
+}
