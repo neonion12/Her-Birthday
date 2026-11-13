@@ -89,6 +89,13 @@ main img.rounded-md {
     box-shadow: 0 16px 36px rgba(160, 82, 122, 0.2);
 }
 
+/* Hall of Fame ছবির aspect ratio Desktop-এও 2:3 করা হলো */
+#hall-of-fame-scroller .bg-white img {
+    height: auto !important;         /* Tailwind-এর h-80 (320px) রিমুভ করল */
+    aspect-ratio: 2 / 2.5 !important;  /* ২:৩ রেশিও সেট করল */
+    object-fit: cover;               /* ছবি যেন চ্যাপ্টা না হয় */
+}
+
 /* Nav buttons */
 #scroll-left-btn,
 #scroll-right-btn {
@@ -357,8 +364,6 @@ footer.bg-navy {
     /* ৩. ছবি ১:১ (স্কয়ার) করা হলো */
     #hall-of-fame-scroller .bg-white img {
         width: 100% !important;      /* কার্ডের ভেতরের প্রস্থ যতটুকু, ছবি ততটুকুই চওড়া হবে */
-        height: auto !important;     /* আগের কোনো ফিক্সড হাইট রিমুভ করল */
-        aspect-ratio: 2 / 3 !important; /* পারফেক্ট স্কয়ার (১:১) */
         object-fit: cover;           /* ছবি চ্যাপ্টা হবে না, ফেস সুন্দরভাবে বসবে */
         margin-bottom: 1rem !important; /* ছবি আর লেখার মাঝে গ্যাপ */
     }
