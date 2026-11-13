@@ -183,20 +183,23 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ============================================================
-       🛡️ NEW: Image Protection (ছবি সুরক্ষা)
+       🛡️ ছবি সুরক্ষা (Image Protection JS)
        ============================================================ */
     
-    // ১. রাইট-ক্লিক মেনু বন্ধ করা (ছবির ওপর)
+    // ১. ছবির ওপর রাইট-ক্লিক এবং ড্র্যাগ বন্ধ করা
     document.querySelectorAll('img').forEach(img => {
-        img.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
+        img.addEventListener('contextmenu', (e) => e.preventDefault());
+        img.addEventListener('dragstart', (e) => e.preventDefault());
     });
 
-    // ২. কীবোর্ড শর্টকাট ব্লক করা (Ctrl+S, Ctrl+Shift+I, PrintScreen, F12 ইত্যাদি)
+    // ২. কীবোর্ড শর্টকাট ব্লক করা (Save, DevTools, PrintScreen ইত্যাদি)
     document.addEventListener('keydown', function(e) {
-        // Ctrl+S / Cmd+S (Save)
+        // Ctrl+S / Cmd+S (Save page)
         if ((e.ctrlKey || e.metaKey) && e.key === 's') {
+            e.preventDefault();
+        }
+        // F12 (Developer Tools)
+        if (e.key === 'F12') {
             e.preventDefault();
         }
         // Ctrl+Shift+I / J / C (Developer Tools)
@@ -207,15 +210,11 @@ document.addEventListener('DOMContentLoaded', function () {
         if (e.key === 'PrintScreen' || e.keyCode === 44) {
             e.preventDefault();
         }
-        // F12
-        if (e.key === 'F12') {
-            e.preventDefault();
-        }
     });
 
-    // ৩. স্ক্রিনশট ডিটারেন্ট (Tab switch বা Window focus হারালে ব্লার হবে)
+    // ৩. স্ক্রিনশট ডিটারেন্ট: অন্য ট্যাবে গেলে বা উইন্ডো মিনিমাইজ করলে স্ক্রিন ব্লার হয়ে যাবে
     window.addEventListener('blur', function() {
-        document.body.style.filter = 'blur(10px)';
+        document.body.style.filter = 'blur(15px)';
     });
     window.addEventListener('focus', function() {
         document.body.style.filter = 'none';
