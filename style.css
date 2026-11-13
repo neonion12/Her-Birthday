@@ -339,27 +339,28 @@ footer.bg-navy {
     100% { transform: translateX(-50%); }
 }
 
-/* --- FIX 3: Hall of Fame মোবাইলে Card & Image Auto Adjust --- */
+/* --- FIX 3: Hall of Fame মোবাইলে ১:১ ছবি ও অটো-অ্যাডজাস্টিং কার্ড --- */
 @media (max-width: 1023px) {
     
-    /* ১. কার্ডের প্রস্থ ছোট করা হলো (স্ক্রিনের ৭০%) */
+    /* ১. কার্ডের প্রস্থ (width) সেট করা হলো */
     #hall-of-fame-scroller .snap-center {
-        width: 70vw !important;      /* চাইলে বাড়াতে/কমাতে পারো (যেমন: 60vw বা 80vw) */
-        max-width: 280px;            /* বড় ফোনেও কার্ড যেন অতিরিক্ত বড় না হয় */
+        width: 75vw !important;      /* মোবাইলে কার্ডের চওড়া (চাইলে 80vw বা 70vw করতে পারো) */
+        max-width: 300px;            /* বড় ফোনেও কার্ড যেন বিশাল না হয় */
     }
 
-    /* ২. সাদা কার্ডের উচ্চতা অটো করা হলো */
+    /* ২. কার্ডের উচ্চতা অটো করা হলো (যাতে বাড়তি স্পেস না থাকে) */
     #hall-of-fame-scroller .bg-white {
-        height: auto !important;     /* কার্ড এখন ছবি ও লেখার সাইজে নিজেই তৈরি হবে */
-        padding: 1rem !important;    /* প্যাডিং একটু কমিয়ে দেওয়া হলো */
+        height: auto !important;     /* Tailwind-এর h-full-কে ব্লক করল */
+        padding: 1rem !important;    /* প্যাডিং একটু কমালাম */
     }
 
-    /* ৩. ছবির সাইজ (প্রস্থ কার্ডের সাথে মিলবে, উচ্চতা তুমি কাস্টমাইজ করবে) */
+    /* ৩. ছবি ১:১ (স্কয়ার) করা হলো */
     #hall-of-fame-scroller .bg-white img {
-        width: 100% !important;      /* কার্ড যত চওড়া, ছবিও তত চওড়া হবে */
-        height: 230px !important;    /* মোবাইলে ছবির উচ্চতা (তুমি এখানে 200px বা 250px দিয়ে দেখতে পারো) */
-        object-fit: cover;
-        margin-bottom: 1rem !important;
+        width: 100% !important;      /* কার্ডের ভেতরের প্রস্থ যতটুকু, ছবি ততটুকুই চওড়া হবে */
+        height: auto !important;     /* আগের কোনো ফিক্সড হাইট রিমুভ করল */
+        aspect-ratio: 1 / 1 !important; /* পারফেক্ট স্কয়ার (১:১) */
+        object-fit: cover;           /* ছবি চ্যাপ্টা হবে না, ফেস সুন্দরভাবে বসবে */
+        margin-bottom: 1rem !important; /* ছবি আর লেখার মাঝে গ্যাপ */
     }
 }
 
