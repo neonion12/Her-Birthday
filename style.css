@@ -339,11 +339,11 @@ footer.bg-navy {
     100% { transform: translateX(-50%); }
 }
 
-/* --- FIX 3: Hall of Fame ছবির aspect ratio মোবাইলে ঠিক --- */
+/* --- FIX 3: Hall of Fame ছবির সাইজ মোবাইলে ছোট --- */
 @media (max-width: 1023px) {
     #hall-of-fame-scroller .bg-white img {
-        height: auto;
-        aspect-ratio: 4 / 5;
+        height: 260px; /* মোবাইলে ছবির উচ্চতা কমিয়ে আনা হলো */
+        aspect-ratio: auto;
         object-fit: cover;
     }
 }
