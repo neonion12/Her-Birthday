@@ -92,7 +92,7 @@ main img.rounded-md {
 /* Hall of Fame ছবির সাইজ (Desktop) */
 #hall-of-fame-scroller .bg-white img {
     width: 100% !important;         /* কার্ডের প্রস্থের সাথে মিলবে */
-    height: 350px !important;       /* এখানে পিক্সেল বাড়িয়ে/কমিয়ে ডেস্কটপের সাইজ ঠিক করো */
+    height: 400px !important;       /* এখানে পিক্সেল বাড়িয়ে/কমিয়ে ডেস্কটপের সাইজ ঠিক করো */
     object-fit: cover;              /* ছবি চ্যাপ্টা হবে না */
 }
 
@@ -363,8 +363,8 @@ footer.bg-navy {
 
     /* ৩. ছবির সাইজ পিক্সেলে সেট করা হলো */
     #hall-of-fame-scroller .bg-white img {
-        width: 100% !important;      /* কার্ডের ভেতরের প্রস্থ যতটুকু, ছবি ততটুকুই চওড়া হবে */
-        height: 220px !important;    /* মোবাইলে ছবির উচ্চতা (এখানে 200px বা 250px দিয়ে ট্রাই করে দেখো) */
+        width: 90% !important;      /* কার্ডের ভেতরের প্রস্থ যতটুকু, ছবি ততটুকুই চওড়া হবে */
+        height: 300px !important;    /* মোবাইলে ছবির উচ্চতা (এখানে 200px বা 250px দিয়ে ট্রাই করে দেখো) */
         object-fit: cover;           /* ছবি চ্যাপ্টা হবে না */
         margin-bottom: 1rem !important; /* ছবি আর লেখার মাঝে গ্যাপ */
     }
