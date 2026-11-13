@@ -339,12 +339,16 @@ footer.bg-navy {
     100% { transform: translateX(-50%); }
 }
 
-/* --- FIX 3: Hall of Fame ছবির সাইজ মোবাইলে ছোট --- */
+/* --- FIX 3: Hall of Fame ছবি মোবাইলে Width & Height কাস্টমাইজ --- */
 @media (max-width: 1023px) {
     #hall-of-fame-scroller .bg-white img {
-        height: auto; /* মোবাইলে ছবির উচ্চতা কমিয়ে আনা হলো */
-        aspect-ratio: 1/1;
-        object-fit: cover;
+        /* এখানে তুমি width আর height চেঞ্জ করে দেখো */
+        width: 250px;    /* ছবির প্রস্থ (চাইলে % দিতে পারো, যেমন: 80%) */
+        height: 250px;   /* ছবির উচ্চতা (যেমন: 300px, 200px) */
+        
+        object-fit: cover; /* ছবি যেন চ্যাপ্টা না হয় */
+        margin: 0 auto 1rem auto; /* ছবিটা কার্ডের মাঝখানে থাকবে এবং নিচে গ্যাপ থাকবে */
+        display: block; /* সেন্টার করার জন্য */
     }
 }
 
