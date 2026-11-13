@@ -357,7 +357,7 @@ footer.bg-navy {
     /* ৩. ছবির সাইজ (প্রস্থ কার্ডের সাথে মিলবে, উচ্চতা তুমি কাস্টমাইজ করবে) */
     #hall-of-fame-scroller .bg-white img {
         width: 100% !important;      /* কার্ড যত চওড়া, ছবিও তত চওড়া হবে */
-        height: 500px !important;    /* মোবাইলে ছবির উচ্চতা (তুমি এখানে 200px বা 250px দিয়ে দেখতে পারো) */
+        height: 400px !important;    /* মোবাইলে ছবির উচ্চতা (তুমি এখানে 200px বা 250px দিয়ে দেখতে পারো) */
         object-fit: cover;
         margin-bottom: 1rem !important;
     }
