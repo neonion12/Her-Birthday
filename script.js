@@ -38,14 +38,14 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    /* ---------- LightGallery ---------- */
-    const lgEl = document.getElementById('lightgallery');
-    if (lgEl && window.lightGallery) {
-        lightGallery(lgEl, {
-            speed: 500,
-            download: false
-        });
-    }
+    // /* ---------- LightGallery ---------- */
+    // const lgEl = document.getElementById('lightgallery');
+    // if (lgEl && window.lightGallery) {
+    //     lightGallery(lgEl, {
+    //         speed: 500,
+    //         download: false
+    //     });
+    // }
 
     /* ---------- Hall of Fame Scroller ---------- */
     const scroller = document.getElementById('hall-of-fame-scroller');
