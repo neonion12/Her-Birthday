@@ -89,11 +89,11 @@ main img.rounded-md {
     box-shadow: 0 16px 36px rgba(160, 82, 122, 0.2);
 }
 
-/* Hall of Fame ছবির aspect ratio Desktop-এও 2:3 করা হলো */
+/* Hall of Fame ছবির সাইজ (Desktop) */
 #hall-of-fame-scroller .bg-white img {
-    height: auto !important;         /* Tailwind-এর h-80 (320px) রিমুভ করল */
-    aspect-ratio: 2 / 2.5 !important;  /* ২:৩ রেশিও সেট করল */
-    object-fit: cover;               /* ছবি যেন চ্যাপ্টা না হয় */
+    width: 100% !important;         /* কার্ডের প্রস্থের সাথে মিলবে */
+    height: 350px !important;       /* এখানে পিক্সেল বাড়িয়ে/কমিয়ে ডেস্কটপের সাইজ ঠিক করো */
+    object-fit: cover;              /* ছবি চ্যাপ্টা হবে না */
 }
 
 /* Nav buttons */
@@ -346,29 +346,29 @@ footer.bg-navy {
     100% { transform: translateX(-50%); }
 }
 
-/* --- FIX 3: Hall of Fame মোবাইলে ১:১ ছবি ও অটো-অ্যাডজাস্টিং কার্ড --- */
+/* --- FIX 3: Hall of Fame মোবাইলে Width & Height পিক্সেলে অ্যাডজাস্ট --- */
 @media (max-width: 1023px) {
     
     /* ১. কার্ডের প্রস্থ (width) সেট করা হলো */
     #hall-of-fame-scroller .snap-center {
-        width: 75vw !important;      /* মোবাইলে কার্ডের চওড়া (চাইলে 80vw বা 70vw করতে পারো) */
-        max-width: 300px;            /* বড় ফোনেও কার্ড যেন বিশাল না হয় */
+        width: 75vw !important;      /* মোবাইলে কার্ডের চওড়া */
+        max-width: 280px;            /* বড় ফোনেও কার্ড যেন বিশাল না হয় */
     }
 
     /* ২. কার্ডের উচ্চতা অটো করা হলো (যাতে বাড়তি স্পেস না থাকে) */
     #hall-of-fame-scroller .bg-white {
-        height: auto !important;     /* Tailwind-এর h-full-কে ব্লক করল */
-        padding: 1rem !important;    /* প্যাডিং একটু কমালাম */
+        height: auto !important;     
+        padding: 1rem !important;    
     }
 
-    /* ৩. ছবি ১:১ (স্কয়ার) করা হলো */
+    /* ৩. ছবির সাইজ পিক্সেলে সেট করা হলো */
     #hall-of-fame-scroller .bg-white img {
         width: 100% !important;      /* কার্ডের ভেতরের প্রস্থ যতটুকু, ছবি ততটুকুই চওড়া হবে */
-        object-fit: cover;           /* ছবি চ্যাপ্টা হবে না, ফেস সুন্দরভাবে বসবে */
+        height: 220px !important;    /* মোবাইলে ছবির উচ্চতা (এখানে 200px বা 250px দিয়ে ট্রাই করে দেখো) */
+        object-fit: cover;           /* ছবি চ্যাপ্টা হবে না */
         margin-bottom: 1rem !important; /* ছবি আর লেখার মাঝে গ্যাপ */
     }
 }
-
 /* --- FIX 4: Countdown ছোট, overflow এড়াতে --- */
 @media (max-width: 767px) {
     #countdown {
