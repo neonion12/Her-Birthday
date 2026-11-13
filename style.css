@@ -358,7 +358,7 @@ footer.bg-navy {
     #hall-of-fame-scroller .bg-white img {
         width: 100% !important;      /* কার্ডের ভেতরের প্রস্থ যতটুকু, ছবি ততটুকুই চওড়া হবে */
         height: auto !important;     /* আগের কোনো ফিক্সড হাইট রিমুভ করল */
-        aspect-ratio: 1 / 1 !important; /* পারফেক্ট স্কয়ার (১:১) */
+        aspect-ratio: 2 / 3 !important; /* পারফেক্ট স্কয়ার (১:১) */
         object-fit: cover;           /* ছবি চ্যাপ্টা হবে না, ফেস সুন্দরভাবে বসবে */
         margin-bottom: 1rem !important; /* ছবি আর লেখার মাঝে গ্যাপ */
     }
