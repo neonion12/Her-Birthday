@@ -339,16 +339,27 @@ footer.bg-navy {
     100% { transform: translateX(-50%); }
 }
 
-/* --- FIX 3: Hall of Fame ছবি মোবাইলে Width & Height কাস্টমাইজ --- */
+/* --- FIX 3: Hall of Fame মোবাইলে Card & Image Auto Adjust --- */
 @media (max-width: 1023px) {
+    
+    /* ১. কার্ডের প্রস্থ ছোট করা হলো (স্ক্রিনের ৭০%) */
+    #hall-of-fame-scroller .snap-center {
+        width: 70vw !important;      /* চাইলে বাড়াতে/কমাতে পারো (যেমন: 60vw বা 80vw) */
+        max-width: 280px;            /* বড় ফোনেও কার্ড যেন অতিরিক্ত বড় না হয় */
+    }
+
+    /* ২. সাদা কার্ডের উচ্চতা অটো করা হলো */
+    #hall-of-fame-scroller .bg-white {
+        height: auto !important;     /* কার্ড এখন ছবি ও লেখার সাইজে নিজেই তৈরি হবে */
+        padding: 1rem !important;    /* প্যাডিং একটু কমিয়ে দেওয়া হলো */
+    }
+
+    /* ৩. ছবির সাইজ (প্রস্থ কার্ডের সাথে মিলবে, উচ্চতা তুমি কাস্টমাইজ করবে) */
     #hall-of-fame-scroller .bg-white img {
-        /* এখানে তুমি width আর height চেঞ্জ করে দেখো */
-        width: 150px;    /* ছবির প্রস্থ (চাইলে % দিতে পারো, যেমন: 80%) */
-        height: 150px;   /* ছবির উচ্চতা (যেমন: 300px, 200px) */
-        
-        object-fit: cover; /* ছবি যেন চ্যাপ্টা না হয় */
-        margin: 0 auto 1rem auto; /* ছবিটা কার্ডের মাঝখানে থাকবে এবং নিচে গ্যাপ থাকবে */
-        display: block; /* সেন্টার করার জন্য */
+        width: 100% !important;      /* কার্ড যত চওড়া, ছবিও তত চওড়া হবে */
+        height: 220px !important;    /* মোবাইলে ছবির উচ্চতা (তুমি এখানে 200px বা 250px দিয়ে দেখতে পারো) */
+        object-fit: cover;
+        margin-bottom: 1rem !important;
     }
 }
 
