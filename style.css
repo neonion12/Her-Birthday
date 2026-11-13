@@ -343,8 +343,8 @@ footer.bg-navy {
 @media (max-width: 1023px) {
     #hall-of-fame-scroller .bg-white img {
         /* এখানে তুমি width আর height চেঞ্জ করে দেখো */
-        width: 250px;    /* ছবির প্রস্থ (চাইলে % দিতে পারো, যেমন: 80%) */
-        height: 250px;   /* ছবির উচ্চতা (যেমন: 300px, 200px) */
+        width: 150px;    /* ছবির প্রস্থ (চাইলে % দিতে পারো, যেমন: 80%) */
+        height: 150px;   /* ছবির উচ্চতা (যেমন: 300px, 200px) */
         
         object-fit: cover; /* ছবি যেন চ্যাপ্টা না হয় */
         margin: 0 auto 1rem auto; /* ছবিটা কার্ডের মাঝখানে থাকবে এবং নিচে গ্যাপ থাকবে */
