@@ -38,15 +38,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // /* ---------- LightGallery ---------- */
-    // const lgEl = document.getElementById('lightgallery');
-    // if (lgEl && window.lightGallery) {
-    //     lightGallery(lgEl, {
-    //         speed: 500,
-    //         download: false
-    //     });
-    // }
-
     /* ---------- Hall of Fame Scroller ---------- */
     const scroller = document.getElementById('hall-of-fame-scroller');
     const scrollLeftBtn = document.getElementById('scroll-left-btn');
@@ -62,27 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 scroller.scrollBy({ left: -cardWidth, behavior: 'smooth' });
             });
         }
-    }
-
-    /* ---------- Video Uploader (tumari original, unused) ---------- */
-    const videoUploadInput  = document.getElementById('video-upload');
-    const videoPlayer       = document.getElementById('video-player');
-    const videoUploadLabel  = document.getElementById('video-upload-label');
-
-    if (videoUploadInput && videoPlayer && videoUploadLabel) {
-        videoUploadLabel.addEventListener('click', () => {
-            videoUploadInput.click();
-        });
-        videoUploadInput.addEventListener('change', (event) => {
-            const file = event.target.files[0];
-            if (file) {
-                const videoURL = URL.createObjectURL(file);
-                videoPlayer.src = videoURL;
-                videoPlayer.classList.remove('hidden');
-                videoUploadLabel.classList.add('hidden');
-                videoPlayer.play();
-            }
-        });
     }
 
     /* ---------- Sakura Petal Animation ---------- */
@@ -183,36 +153,24 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     /* ============================================================
-       🛡️ ছবি সুরক্ষা (Image Protection JS)
+       🛡️ Image Protection JS
        ============================================================ */
     
-    // ১. ছবির ওপর রাইট-ক্লিক এবং ড্র্যাগ বন্ধ করা
+    // ১. রাইট-ক্লিক এবং ড্র্যাগ ব্লক
     document.querySelectorAll('img').forEach(img => {
         img.addEventListener('contextmenu', (e) => e.preventDefault());
         img.addEventListener('dragstart', (e) => e.preventDefault());
     });
 
-    // ২. কীবোর্ড শর্টকাট ব্লক করা (Save, DevTools, PrintScreen ইত্যাদি)
+    // ২. কীবোর্ড শর্টকাট ব্লক (Save, DevTools)
     document.addEventListener('keydown', function(e) {
-        // Ctrl+S / Cmd+S (Save page)
-        if ((e.ctrlKey || e.metaKey) && e.key === 's') {
-            e.preventDefault();
-        }
-        // F12 (Developer Tools)
-        if (e.key === 'F12') {
-            e.preventDefault();
-        }
-        // Ctrl+Shift+I / J / C (Developer Tools)
-        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
-            e.preventDefault();
-        }
-        // PrintScreen
-        if (e.key === 'PrintScreen' || e.keyCode === 44) {
-            e.preventDefault();
-        }
+        if ((e.ctrlKey || e.metaKey) && e.key === 's') e.preventDefault();
+        if (e.key === 'F12') e.preventDefault();
+        if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) e.preventDefault();
+        if (e.key === 'PrintScreen' || e.keyCode === 44) e.preventDefault();
     });
 
-    // ৩. স্ক্রিনশট ডিটারেন্ট: অন্য ট্যাবে গেলে বা উইন্ডো মিনিমাইজ করলে স্ক্রিন ব্লার হয়ে যাবে
+    // ৩. স্ক্রিনশট ডিটারেন্ট (Tab switch বা Window blur হলে ব্লার)
     window.addEventListener('blur', function() {
         document.body.style.filter = 'blur(15px)';
     });
