@@ -1,5 +1,5 @@
 /* ============================================================
-   🌸 Palette & Page Background — hubohu original
+   🌸 Palette & Page Background
    ============================================================ */
 :root {
     --text: #d63384;
@@ -27,7 +27,7 @@ body {
 }
 
 /* ============================================================
-   🎬 Hero — keep original
+   🎬 Hero
    ============================================================ */
 header {
     isolation: isolate;
@@ -91,9 +91,9 @@ main img.rounded-md {
 
 /* Hall of Fame ছবির সাইজ (Desktop) */
 #hall-of-fame-scroller .bg-white img {
-    width: 100% !important;         /* কার্ডের প্রস্থের সাথে মিলবে */
-    height: 400px !important;       /* এখানে পিক্সেল বাড়িয়ে/কমিয়ে ডেস্কটপের সাইজ ঠিক করো */
-    object-fit: cover;              /* ছবি চ্যাপ্টা হবে না */
+    width: 100% !important;         
+    height: 400px !important;       
+    object-fit: cover;              
 }
 
 /* Nav buttons */
@@ -169,7 +169,7 @@ footer.bg-navy {
 .scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
 
 /* ============================================================
-   📸 Photo Columns (DESKTOP) — hubohu original
+   📸 Photo Columns (DESKTOP)
    ============================================================ */
 .photo-col {
     width: 180px;
@@ -225,7 +225,7 @@ footer.bg-navy {
 }
 
 /* ============================================================
-   🌸 Hero Collage (DESKTOP) — hubohu original
+   🌸 Hero Collage (DESKTOP)
    ============================================================ */
 .collage-img {
     position: absolute;
@@ -262,7 +262,7 @@ footer.bg-navy {
 }
 
 /* ============================================================
-   📱 ============ MOBILE FIXES (শুধু এগুলো নতুন) ============
+   📱 MOBILE FIXES
    ============================================================ */
 
 /* --- FIX 1: হিরো কলাজে ১২টা ছবিই মোবাইলে দেখাবে --- */
@@ -275,19 +275,15 @@ footer.bg-navy {
         object-fit: cover;
         animation-duration: 9s;
     }
-    /* Left side — top cluster */
     .img-1  { top: 3%;    left: 1%;  width: 64px; --rot: -8deg; }
     .img-2  { top: 11%;   left: 6%;  width: 54px; --rot: 6deg;  }
     .img-3  { top: 19%;   left: 0%;  width: 60px; --rot: 4deg;  }
-    /* Left side — bottom cluster */
     .img-4  { bottom: 19%; left: 0%;  width: 60px; --rot: -6deg; }
     .img-5  { bottom: 11%; left: 6%;  width: 54px; --rot: 7deg;  }
     .img-6  { bottom: 3%;  left: 1%;  width: 64px; --rot: -4deg; }
-    /* Right side — top cluster */
     .img-7  { top: 3%;    right: 1%; width: 64px; --rot: 8deg;  }
     .img-8  { top: 11%;   right: 6%; width: 54px; --rot: -6deg; }
     .img-9  { top: 19%;   right: 0%; width: 60px; --rot: -4deg; }
-    /* Right side — bottom cluster */
     .img-10 { bottom: 19%; right: 0%; width: 60px; --rot: 6deg;  }
     .img-11 { bottom: 11%; right: 6%; width: 54px; --rot: -7deg; }
     .img-12 { bottom: 3%;  right: 1%; width: 64px; --rot: 4deg;  }
@@ -295,13 +291,11 @@ footer.bg-navy {
 
 /* --- FIX 2: লেটারের পাশের ফটো কলাম মোবাইলে horizontal strip --- */
 @media (max-width: 1023px) {
-    /* parent flex → column */
     main .flex.items-stretch.justify-center.max-w-7xl {
         flex-direction: column;
     }
-
     .photo-col {
-        display: block !important;   /* Tailwind 'hidden' override */
+        display: block !important;   
         width: 100%;
         height: 150px;
         border-radius: 18px;
@@ -309,7 +303,6 @@ footer.bg-navy {
         mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent);
         overflow: hidden;
     }
-
     .photo-track {
         flex-direction: row;
         align-items: center;
@@ -317,7 +310,6 @@ footer.bg-navy {
         height: 100%;
         width: max-content;
     }
-
     .photo-item {
         width: 120px;
         height: 100%;
@@ -325,17 +317,13 @@ footer.bg-navy {
         flex-shrink: 0;
         margin-right: 14px;
     }
-
     .photo-up .photo-track,
     .photo-down .photo-track {
         animation: scrollPhotoMobile 30s linear infinite;
     }
-
     .photo-down .photo-track {
         animation-direction: reverse;
     }
-
-    /* Letter card full width on mobile */
     main .flex-1.max-w-2xl {
         width: 100%;
     }
@@ -348,28 +336,23 @@ footer.bg-navy {
 
 /* --- FIX 3: Hall of Fame মোবাইলে Width & Height পিক্সেলে অ্যাডজাস্ট --- */
 @media (max-width: 1023px) {
-    
-    /* ১. কার্ডের প্রস্থ (width) সেট করা হলো */
     #hall-of-fame-scroller .snap-center {
-        width: 75vw !important;      /* মোবাইলে কার্ডের চওড়া */
-        max-width: 280px;            /* বড় ফোনেও কার্ড যেন বিশাল না হয় */
+        width: 75vw !important;      
+        max-width: 280px;            
     }
-
-    /* ২. কার্ডের উচ্চতা অটো করা হলো (যাতে বাড়তি স্পেস না থাকে) */
     #hall-of-fame-scroller .bg-white {
         height: auto !important;     
         padding: 1rem !important;    
     }
-
-    /* ৩. ছবির সাইজ পিক্সেলে সেট করা হলো */
     #hall-of-fame-scroller .bg-white img {
-        width: 90% !important;      /* কার্ডের ভেতরের প্রস্থ যতটুকু, ছবি ততটুকুই চওড়া হবে */
-        height: 300px !important;    /* মোবাইলে ছবির উচ্চতা (এখানে 200px বা 250px দিয়ে ট্রাই করে দেখো) */
-        object-fit: cover;           /* ছবি চ্যাপ্টা হবে না */
-        margin-bottom: 1rem !important; /* ছবি আর লেখার মাঝে গ্যাপ */
+        width: 90% !important;      
+        height: 300px !important;    
+        object-fit: cover;           
+        margin-bottom: 1rem !important; 
     }
 }
-/* --- FIX 4: Countdown ছোট, overflow এড়াতে --- */
+
+/* --- FIX 4: Countdown ছোট --- */
 @media (max-width: 767px) {
     #countdown {
         font-size: 1.05rem;
@@ -386,7 +369,7 @@ img {
     -khtml-user-drag: none;
     -moz-user-drag: none;
     -o-user-drag: none;
-    -webkit-touch-callout: none; /* iOS-এ লং-প্রেস মেনু বন্ধ করে */
+    -webkit-touch-callout: none; 
 }
 
 body {
