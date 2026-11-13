@@ -342,7 +342,7 @@ footer.bg-navy {
 /* --- FIX 3: Hall of Fame ছবির সাইজ মোবাইলে ছোট --- */
 @media (max-width: 1023px) {
     #hall-of-fame-scroller .bg-white img {
-        height: 260px; /* মোবাইলে ছবির উচ্চতা কমিয়ে আনা হলো */
+        height: 360px; /* মোবাইলে ছবির উচ্চতা কমিয়ে আনা হলো */
         aspect-ratio: auto;
         object-fit: cover;
     }
